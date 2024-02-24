@@ -12,13 +12,8 @@ return require('packer').startup(function(use)
 	  -- or                            , branch = '0.1.x',
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
-  use({
-	  'rose-pine/neovim',
-	  as = 'rose-pine',
-	  config = function()
-		  vim.cmd('colorscheme rose-pine')
-	  end
-  })
+
+  use { "ellisonleao/gruvbox.nvim" }
   use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate'})
   use('thePrimeagen/harpoon')
   use('mbbill/undotree')
@@ -46,6 +41,10 @@ return require('packer').startup(function(use)
 		  {"rafamadriz/friendly-snippets"},
 	  }
   }
+  use {
+  'nvim-lualine/lualine.nvim',
+  requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+}
   use {
   'nvim-tree/nvim-tree.lua',
   requires = {
