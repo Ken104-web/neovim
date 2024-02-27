@@ -51,6 +51,20 @@ return require('packer').startup(function(use)
     'nvim-tree/nvim-web-devicons', -- optional
   },
 }
+use ('linux-cultist/venv-selector.nvim')
+use ('mfussenegger/nvim-dap')
+use {
+    "mfussenegger/nvim-dap-python",
+    ft = "python",
+    dependencies = {
+      "mfussenegger/nvim-dap",
+    },
+    config = function(_, opts)
+      local path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
+      require("dap-python").setup(path)
+    end,
+  }
+use('jose-elias-alvarez/null-ls.nvim')
   end)
 
 
