@@ -65,6 +65,12 @@ use {
     end,
   }
 use('jose-elias-alvarez/null-ls.nvim')
+use {
+    'numToStr/Comment.nvim',
+    config = function()
+        require('Comment').setup()
+    end
+}
   end)
 
 
